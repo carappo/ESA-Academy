@@ -21,16 +21,15 @@
 <body>
 <div class="container-fluid">
 <div class="row">
-
-  <div class="col-sm-2 sidebar">
-    <h1 class="logo"><a href="./index.html"><img src="./img/logo.png" alt="ESA ACADEMY 生徒管理システム" class="img-fluid"></a></h1>
-    <nav>
-      <ul>
-        <li><a href="./a" class="sign-up-btn"><i class="fas fa-plus"></i>新規登録画面</a></li>
-        <li><a href="./" class="top-page-btn"><i class="fas fa-home"></i>トップページ</a></li>
-      </ul>
-    </nav>
-  </div>
+@extends('layouts.layout')
+@section('nav')
+<nav>
+  <ul>
+    <li><a href="{{ route('sign_up') }}" class="sign-up-btn"><i class="fas fa-plus"></i>新規登録画面</a></li>
+    <li><a href="{{ route('list') }}" class="top-page-btn"><i class="fas fa-home"></i>トップページ</a></li>
+  </ul>
+</nav>
+@endsection
   <!-- /.col-sm-2 .sidebar -->
 
   <div class="r-column col-sm-10">

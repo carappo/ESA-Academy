@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('list');
-});
+})->name('list');
 Route::get('/a', function () {
     return view('sign_up');
-});
+})->name('sign_up');
