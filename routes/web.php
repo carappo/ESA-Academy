@@ -12,10 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','App\Http\Controllers\UserController@index')->name('list');
 
-Route::get('/', function () {
-    return view('list');
-})->name('list');
-Route::get('/a', function () {
-    return view('sign_up');
-})->name('sign_up');
+Route::get('/a','App\Http\Controllers\UserController@store')->name('sign_up');
