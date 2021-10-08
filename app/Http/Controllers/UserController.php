@@ -10,17 +10,16 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        $user = DB::table('users')->get();
-        //Log::debug($user[0]->name);
-        Log::debug(print_r($user[0]->name, true));
-        //Log::debug($user->id);
-        //Log::debug($request);
-        //return view('list');
-        //配列の取得して三人とも表示させる
+        //電話番号08027954991が入力されていたらuserstableから持ってくる
+        //入力されていなかったら全件取得
         
-
-    
-        return view('list',compact('user'));
+        if (is_null($request->input('namber'))) {
+            $user = DB::table('users')->get();  
+        } else {
+            $tell = $request->input('namber');
+            $user = DB::table('users')->where('tel','LIKE',$tell.'%')->get();
+        }
+        return view('list',compact('user'));      
     }
     public function store(Request $request)
     {

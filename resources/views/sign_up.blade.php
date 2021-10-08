@@ -35,7 +35,7 @@
   <div class="r-column col-sm-10">
 
     <div class="header col-sm-10">
-      <button class="input-btn col-sm-4" type="submit">
+      <buttzon class="input-btn col-sm-4" type="submit">
         <input type="text" placeholder="TEL検索">
         <i class="fas fa-search"></i>
       </button>

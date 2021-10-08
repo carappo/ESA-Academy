@@ -35,11 +35,16 @@
 
   <div class="r-column col-sm-10">
     <div class="header col-sm-10">
+      <!--  -->
+      <form action="{{ route('list') }}">
+      <input type="text"  name="namber" placeholder="TEL検索">
       <button class="input-btn col-sm-4" type="submit">
-        <input type="text" placeholder="TEL検索">
-        <i class="fas fa-search"></i>
-      </button>
+            
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
     </div>
+    
     <!-- /.header .col-sm-10 -->
 
     <main class="student-list">
@@ -54,26 +59,24 @@
                 <th>生年月日</th>
                 <th>e-mail</th>
                 <th>TEL</th>
-                <th>プラン名</th>
+                
                 <th></th>
               </tr>
+              @foreach ($user as $value)
+                <tr>
+                  <td>{{$value->name}}</td>
+                  <td>{{$value->age}}</td>
+                  <td>{{$value->birthday}}</td>
+                  <td>{{$value->email}}</td>
+                  <td>{{$value->tel}}</td>
+                  <td>
+                    <button class="tb-btn tb-btn-edit">編集</button>
+                    <button class="tb-btn tb-btn-del">削除</button>
+                  </td>
+                </tr>
+　　　　　　　　@endforeach
             </thead>
-            <tbody>
-　　　　　　　　　　@foreach ($user as $value)
-              <tr>
-              <td>{{$value->name}}</td>
-                <td>{{$value->age}}</td>
-                <td>{{$value->birthday}}</td>
-                <td>{{$value->email}}</td>
-                <td>{{$value->tel}}</td>
-                <td>STANDARD</td>
-                <td>
-                  <button class="tb-btn tb-btn-edit">編集</button>
-                  <button class="tb-btn tb-btn-del">削除</button>
-                </td>
-              </tr>
-　　　　　　　　　　@endforeach
-            </tbody>
+
           </table>
           
         </section>
