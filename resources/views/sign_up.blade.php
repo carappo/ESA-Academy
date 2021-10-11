@@ -47,7 +47,7 @@
         <section class="container-fluid contents-area">
           <h2>新規登録画面</h2>
 
-          <form action="{{ route('list') }}">
+          <form action="{{ route('touroku') }}">
             <div class="form-inner">
               <div class="row">
                 <div class="form-group col-sm-5">
