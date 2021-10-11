@@ -21,35 +21,21 @@ class UserController extends Controller
         }
         return view('list',compact('user'));      
     }
-    //新規登録画面を出したたときにcreatePageを通るようにする
 
-    //新規登録ボタンを押したときはstoreへ
-    //リクエストを受け取り変数に格納
-    //そのデータを使ってuserテーブルに登録
-    //一覧画面に遷移
     public function store(Request $request)
-    {   
+    {  
         
-        $name = $request->input('name');
-        $age = $request->input('age');
-        $birthday = $request->input('birthday');
-        $email = $request->input('email');
-        $tel = $request->input('tel');
-        //Log::debug(print_r($new,true));
-        //Log::debug($request);
-        if (is_null($name)||is_null($age)||is_null($birthday)||is_null($email)||is_null($tel)){
-            return view('sign_up');   
-        }
+        $requestDetas = $request->only(['name', 'age', 'birthday','email','tel']);
         DB::table('users')->insert([
-            'name' => $name,
-            'age' => $age,
-            'email' => $email,
-            'tel' => $tel,
-            'birthday' => $birthday
-        ]);
+            'name' => $requestDetas['name'],
+            'age'=> $requestDetas['age'],
+            'email'=> $requestDetas['email'],
+            'tel'=> $requestDetas['tel'],
+            'birthday'=> $requestDetas['birthday']
+         ]);
         return redirect('/');
     }
-    public function createPage(Request $request) //データベースに送る
+    public function createPage(Request $request) 
     {
         return view('sign_up');
     }
