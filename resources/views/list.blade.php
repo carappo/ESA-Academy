@@ -37,11 +37,8 @@
     <div class="header col-sm-10">
       <!--  -->
       <form action="{{ route('list') }}">
-      <input type="text"  name="namber" placeholder="TEL検索">
-      <button class="input-btn col-sm-4" type="submit">
-            
-          <i class="fas fa-search"></i>
-        </button>
+        <input type="text" name="number" class="form-control" placeholder="電話番号">
+        <button type="submit" class="btn btn-dark">検索</button>
       </form>
     </div>
     

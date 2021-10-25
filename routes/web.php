@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/','App\Http\Controllers\UserController@index')->name('list');
-Route::get('/a','App\Http\Controllers\UserController@createPage')->name('sign_up');
-Route::get('/b','App\Http\Controllers\UserController@store')->name('touroku');
+Route::get('/createPage','App\Http\Controllers\UserController@createPage')->name('sign_up');
+Route::get('/save','App\Http\Controllers\UserController@store')->name('touroku');
+
 

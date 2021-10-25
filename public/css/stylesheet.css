@@ -13,6 +13,11 @@ body {
 p {
   line-height: 1.8;
   letter-spacing: .1em;
+  color: red;
+}
+
+.color p {
+  color: red;
 }
 
 ul {
