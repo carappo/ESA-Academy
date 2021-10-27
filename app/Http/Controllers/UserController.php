@@ -9,11 +9,7 @@ use DB;
 class UserController extends Controller
 {
     public function index(Request $request)
-    {              //メソッド
-        //電話番号08027954991が入力されていたらuserstableから持ってくる
-        //入力されていなかったら全件取得
-        Log::debug($request);
-        
+    {      
         if (is_null($request->input('number'))) {
             $user = DB::table('users')->get();  
         } else {
@@ -31,12 +27,6 @@ class UserController extends Controller
             'email'  => 'required',
             'tel' => 'required',
             'birthday'  => 'required'
-        //], [
-            // 'name.required' => '名前は必須です。',
-            // 'age.required'  => '年齢は必須です。',
-            // 'email.required'  => 'メールアドレスは必須です。',
-            // 'tel.required'  => '電話番号は必須です。',
-            // 'birthday.required'  => '誕生日は必須です。',
         ]);
         $requestDetas = $request->only(['name', 'age', 'birthday','email','tel']);
         DB::table('users')->insert([
