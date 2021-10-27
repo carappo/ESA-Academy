@@ -15,11 +15,21 @@ p {
   letter-spacing: .1em;
   color: red;
 }
-
-.color p {
-  color: red;
+.flash_message {
+  padding: 18px;
+  font-size: 20px;
+  color: #5ebbdb;
+  font-weight: bold;
 }
-
+.f-Alerts {
+  margin-right: 335px;
+  background-color: #edf7fa;
+  height: 66px;
+  border-radius: 20px 20px 20px 20px;
+}
+.dev {
+  display: flex;
+}
 ul {
   padding: 0;
   margin: 0;

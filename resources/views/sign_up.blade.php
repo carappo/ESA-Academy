@@ -54,7 +54,7 @@
                   <label for="name">名前</label>
                   <input type="text" class="form-control" name="name" placeholder="阿部 隆" > 
                   @if ($errors->has('name'))
-                    <p　class="validate">{{$errors->first('name')}}</p>
+                    <p>{{$errors->first('name')}}</p>
                   @endif
                 </div>
                 
@@ -63,28 +63,30 @@
                   <label for="age">年齢</label>
                   <input type="text" class="form-control" name="age" placeholder="21">
                   @if ($errors->has('age'))
-                    <p　class="validate">{{$errors->first('age')}}</p>
+                    <div class="color">
+                      <p>{{$errors->first('age')}}</p>
+                    </div>
                   @endif
                 </div>
                 <div class="form-group col-sm-5">
                   <label for="birthday">生年月日</label>
                   <input type="text" class="form-control" name="birthday" placeholder="2000/6/21">
                   @if ($errors->has('birthday'))
-                    <p　class="validate">{{$errors->first('birthday')}}</p>
+                    <p>{{$errors->first('birthday')}}</p>
                   @endif
                 </div>
                 <div class="form-group col-sm-12">
                   <label for="email">e-mail</label>
                   <input type="email" class="form-control" name="email" placeholder="abe-takashi0622@email.com">
                   @if ($errors->has('email'))
-                    <p　class="validate">{{$errors->first('email')}}</p>
+                    <p>{{$errors->first('email')}}</p>
                   @endif
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="tel">TEL</label>
                   <input type="tel" class="form-control" name="tel" placeholder="080-1234-5678">
                   @if ($errors->has('tel'))
-                    <p　class="validate">{{$errors->first('tel')}}</p>
+                    <p>{{$errors->first('tel')}}</p>
                   @endif
                 </div>
                 <div class="form-group col-sm-6">

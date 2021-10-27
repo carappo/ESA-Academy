@@ -36,9 +36,11 @@
   <div class="r-column col-sm-10">
     <div class="header col-sm-10">
       <!--  -->
-      <form action="{{ route('list') }}">
-        <input type="text" name="number" class="form-control" placeholder="電話番号">
-        <button type="submit" class="btn btn-dark">検索</button>
+      <form  action="{{ route('list') }}">
+        <div class="dev">
+          <input type="text" name="number" class="form-control" placeholder="電話番号">
+          <button type="submit" class="btn btn-dark">検索</button>
+        </div>
       </form>
     </div>
     
@@ -48,6 +50,17 @@
       <div class="container-fluid wrapper">
         <p class="result">15件</p>
         <section class="container-fluid contents-area">
+          @if (session('flash_message'))
+            <div class="flash_message">
+                <div class="alert alert-primary" role="alert">
+                投稿が完了しました
+                </div>
+            </div>
+          @endif
+
+          <main class="mt-4">
+            @yield('content')
+          </main>
           <table class="table">
             <thead>
               <tr>
