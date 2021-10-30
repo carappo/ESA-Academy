@@ -80,8 +80,10 @@
                   <td>{{$value->email}}</td>
                   <td>{{$value->tel}}</td>
                   <td>
-                    <button class="tb-btn tb-btn-edit">編集</button>
-                    <button class="tb-btn tb-btn-del">削除</button>
+                    <form  action='/resetsignal/{{$value->id}}'> 
+                      <button class="tb-btn tb-btn-edit">編集</button>
+                      <button class="tb-btn tb-btn-del">削除</button>
+                    </form>
                   </td>
                 </tr>
 　　　　　　　　@endforeach

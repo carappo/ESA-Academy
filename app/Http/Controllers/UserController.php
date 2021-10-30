@@ -42,5 +42,15 @@ class UserController extends Controller
     {
         return view('sign_up');
     }
+
+    public function delete(Request $request)
+    {
+        DB::table('users')->where('id',$request->id)->delete();
+        return redirect('/');
+    }
+    
+    
+    //削除ボタンを押すとデリートメソッドにとんでいく  できればmodal
+    //DB
 }
 //

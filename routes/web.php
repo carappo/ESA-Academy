@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/','App\Http\Controllers\UserController@index')->name('list');
+Route::get('/resetsignal/{id}','App\Http\Controllers\UserController@delete')->name('reset');
 Route::get('/createPage','App\Http\Controllers\UserController@createPage')->name('sign_up');
 Route::get('/save','App\Http\Controllers\UserController@store')->name('touroku');
-
 
